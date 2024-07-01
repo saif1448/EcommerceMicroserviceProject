@@ -1,0 +1,21 @@
+#spring.datasource.url=jdbc:oracle:thin:@localhost:1521/orcl
+#spring.datasource.username=new_test
+#spring.datasource.password=new_test_1234
+#spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+#
+#eureka.client.service-url.defaultZone=http://localhost:9000/eureka/
+#
+#
+#server.port=9050
+
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: new_test
+    password: new_test_1234
+    driver-class-name: oracle.jdbc.OracleDriver
+
+server:
+  port: 9050
+
