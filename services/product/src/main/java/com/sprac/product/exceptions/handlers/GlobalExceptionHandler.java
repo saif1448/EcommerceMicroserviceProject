@@ -19,14 +19,14 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ProductPurchaseException.class)
     public ResponseEntity<?> handle(ProductPurchaseException ex){
         return ResponseEntity
-                .status(HttpStatus.NOT_FOUND)
+                .status(HttpStatus.BAD_REQUEST)
                 .body(ex.getMessage());
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<?> handle(EntityNotFoundException ex){
         return ResponseEntity
-                .status(HttpStatus.NOT_FOUND)
+                .status(HttpStatus.BAD_REQUEST)
                 .body(ex.getMessage());
     }
 

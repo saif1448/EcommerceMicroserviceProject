@@ -20,7 +20,7 @@ public class CustomerController {
 
     private final CustomerService service;
 
-    @PostMapping("/create")
+    @PostMapping
     public ResponseEntity<?> createCustomer(
             @RequestBody @Valid CustomerRequest request
     ) {
@@ -28,7 +28,7 @@ public class CustomerController {
     }
 
 
-    @PutMapping("/update")
+    @PutMapping
     public ResponseEntity<?> updateCustomer(
         @RequestBody @Valid CustomerRequest request
     ){

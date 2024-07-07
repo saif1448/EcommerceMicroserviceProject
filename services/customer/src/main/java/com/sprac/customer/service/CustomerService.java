@@ -1,6 +1,7 @@
 package com.sprac.customer.service;
 
 
+import com.sprac.customer.models.Address;
 import com.sprac.customer.models.Customer;
 import com.sprac.customer.models.dtos.CustomerResponse;
 import com.sprac.customer.models.dtos.CustomerRequest;
@@ -22,11 +23,18 @@ public class CustomerService {
    private final CustomerRepository repository;
 
     public Customer createCustomer(CustomerRequest request) {
+
+        Address address = Address.builder()
+                .houseNumber(request.address().getHouseNumber())
+                .zipCode(request.address().getZipCode())
+                .street(request.address().getStreet())
+                .build();
+
         Customer customer = Customer.builder()
                 .firstName(request.firstName())
                 .lastName(request.lastName())
                 .email(request.email())
-                .address(request.address())
+                .address(address)
                 .build();
 
         return repository.save(customer);

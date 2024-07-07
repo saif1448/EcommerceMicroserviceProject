@@ -15,6 +15,13 @@ spring:
     username: new_test
     password: new_test_1234
     driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show: true
+    properties:
+      hibernate:
+        format_sql: true
 
 server:
   port: 9050
