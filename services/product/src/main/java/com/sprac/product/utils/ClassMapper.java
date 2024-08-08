@@ -12,6 +12,7 @@ public class ClassMapper {
 
     public ProductResponse mapToProductResponse(Product productEntity){
         return new ProductResponse(
+                productEntity.getId(),
                 productEntity.getName(),
                 productEntity.getDescription(),
                 productEntity.getAvailableQuantity(),

@@ -32,3 +32,4 @@ application:
     customer-url: http://localhost:9222/customer
     product_url: http://localhost:9222/product
     payment-url: http://localhost:9222/payment
+

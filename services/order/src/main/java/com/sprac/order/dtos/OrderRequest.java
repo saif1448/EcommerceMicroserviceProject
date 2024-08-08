@@ -17,10 +17,9 @@ public record OrderRequest(
         BigDecimal amount,
         @NotNull(message = "Payment method should be mentioned")
         PaymentMethod paymentMethod,
+
         @NotNull(message = "Customer cannot be empty")
-        @NotEmpty(message = "Customer cannot be empty")
-        @NotBlank(message = "Customer cannot be empty")
-        long customerId,
+        Long customerId,
 
         @NotEmpty(message = "You should at lease purchase one product")
         List<PurchaseRequest> products

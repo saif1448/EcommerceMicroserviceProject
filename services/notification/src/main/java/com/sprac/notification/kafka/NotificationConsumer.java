@@ -31,11 +31,16 @@ public class NotificationConsumer {
     public void consumePaymentSuccessNotification(PaymentConfirmation paymentConfirmation) throws MessagingException {
 
         logger.info("Consuming the message from payment-topic Topic:: " + paymentConfirmation);
-        repository.save(Notification.builder()
+//        repository.save(Notification.builder()
+//                .type(NotificationType.PAYMENT_CONFIRMATION)
+//                .notificationDate(LocalDateTime.now())
+//                .paymentConfirmation(paymentConfirmation)
+//                .build());
+        Notification.builder()
                 .type(NotificationType.PAYMENT_CONFIRMATION)
                 .notificationDate(LocalDateTime.now())
                 .paymentConfirmation(paymentConfirmation)
-                .build());
+                .build();
 
         //todo:: send email
         var customerName = paymentConfirmation.customerFirstName() + " " + paymentConfirmation.customerLastName();
@@ -52,11 +57,16 @@ public class NotificationConsumer {
     public void consumeOrderConfirmationNotification(OrderConfirmation orderConfirmation) throws MessagingException {
 
         logger.info("Consuming the message from order-topic Topic:: " + orderConfirmation);
-        repository.save(Notification.builder()
+//        repository.save(Notification.builder()
+//                .type(NotificationType.ORDER_CONFIRMATION)
+//                .notificationDate(LocalDateTime.now())
+//                .orderConfirmation(orderConfirmation)
+//                .build());
+        Notification.builder()
                 .type(NotificationType.ORDER_CONFIRMATION)
                 .notificationDate(LocalDateTime.now())
                 .orderConfirmation(orderConfirmation)
-                .build());
+                .build();
 
         //todo:: send email
         var customerName = orderConfirmation.customer().firstName() + " " + orderConfirmation.customer().lastName();
